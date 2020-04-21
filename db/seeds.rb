@@ -10,14 +10,30 @@ puts "cleaning database"
 Restaurant.destroy_all
 puts "database empty"
 
-100.times do
+20.times do
   name = Faker::Restaurant.name
   address = Faker::Address.street_address
   phone = Faker::PhoneNumber.cell_phone
   category = ["chinese", "italian", "japanese", "french", "belgian"].sample
-  restaurant = Restaurant.new(name: name, address: address, phone: phone, category: category)
-  restaurante.save
+  restaurant = Restaurant.new(name: name, address: address, phone_number: phone, category: category)
+  restaurant.save
   puts "Restaurant #{restaurant.id} created"
 end
 
 puts "#{Restaurant.count} created"
+
+puts "Creating reviews"
+
+restaurants = Restaurant.all
+
+restaurants.each do |restaurant|
+  5.times do
+    content = Faker::Restaurant.review
+    rating = rand(0..5)
+    review = Review.new(content: content, rating: rating, restaurant: restaurant)
+    review.save
+    puts "review #{review.id} created for restaurant #{restaurant.id}"
+  end
+end
+
+puts "done"
