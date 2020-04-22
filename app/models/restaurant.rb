@@ -10,6 +10,10 @@ class Restaurant < ApplicationRecord
   def rating
     sum_ratings = Review.where(restaurant: self).sum(:rating)
     number_of_ratings = Review.where(restaurant: self).count
-    sum_ratings.fdiv(number_of_ratings).round(1)
+    if number_of_ratings.zero?
+      "No rating yet"
+    else
+      sum_ratings.fdiv(number_of_ratings).round(1)
+    end
   end
 end

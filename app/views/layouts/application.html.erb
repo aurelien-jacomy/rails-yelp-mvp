@@ -12,6 +12,12 @@
   </head>
 
   <body>
+    <div class="navbar navbar-light">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active-item"><%= link_to "Home", restaurants_path %></li>
+        <li class="nav-item"><%= link_to "New restaurant", new_restaurant_path %></li>
+      </ul>  
+    </div>
     <%= yield %>
   </body>
 </html>
