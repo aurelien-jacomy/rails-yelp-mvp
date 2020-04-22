@@ -1,6 +1,9 @@
-// Specific CSS for your home-page
+// Place all the styles related to the restaurants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
 .cards-container {
-	margin: 40px;
+	margin: 20px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-gap: 16px;
@@ -17,4 +20,3 @@
     grid-template-columns: 1fr 1fr;
   }
 }
-
