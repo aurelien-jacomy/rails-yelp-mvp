@@ -1,0 +1,18 @@
+<div class="global-container">
+	<div class="header">
+		<div>
+			<h1><%= @restaurant.name %></h1>
+			<h2><%= @restaurant.category %></h2>
+		</div>
+		<div>
+			<h2><%= @restaurant.rating %></h2>
+		</div>
+	</div>
+
+	<% @reviews.each do |review| %>
+		<div class="text-card">
+			<p><%= review.content %></p>
+			<p><%= review.rating %></p>
+		</div>
+	<% end %>
+</div>

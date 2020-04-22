@@ -2,21 +2,3 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.cards-container {
-	margin: 20px;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-gap: 16px;
-}
-
-@media(max-width: 1200px) {
-  .cards-container {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-@media(max-width: 750px) {
-  .cards-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}

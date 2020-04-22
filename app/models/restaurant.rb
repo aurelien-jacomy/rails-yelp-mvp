@@ -6,4 +6,10 @@ class Restaurant < ApplicationRecord
     message: "%{value} is not a valid category"
   }
   validates :address, presence: true
+
+  def rating
+    sum_ratings = Review.where(restaurant: self).sum(:rating)
+    number_of_ratings = Review.where(restaurant: self).count
+    sum_ratings.fdiv(number_of_ratings).round(1)
+  end
 end
